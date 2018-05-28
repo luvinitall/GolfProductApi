@@ -9,7 +9,7 @@ namespace GolfProductApi
     {
         public virtual DbSet<Catalog> Catalogs { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<Category> Families { get; set; }
+        public virtual DbSet<Family> Families { get; set; }
 
         public virtual DbSet<Product> Products { get; set; }
 
@@ -18,6 +18,7 @@ namespace GolfProductApi
             //This will execute the database migrations
             //including creating or updating the database according to the model
             Database.Migrate();
+     
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

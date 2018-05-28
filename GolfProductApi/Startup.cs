@@ -39,6 +39,8 @@ namespace GolfProductApi
                     new XmlDataContractSerializerInputFormatter()));
             services.AddDbContext<GolfProductDbContext>(o =>
                 o.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=GolfProductDb;Trusted_Connection=True"));
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -73,6 +75,9 @@ namespace GolfProductApi
             builder.Namespace = "GolfProductApi";
             builder.ContainerName = "GolfProductApiContainer";
             builder.EntitySet<Catalog>("Catalogs");
+            builder.EntitySet<Category>("Categories");
+            builder.EntitySet<Family>("Families");
+            builder.EntitySet<Product>("Products");
 
             return builder.GetEdmModel();
         }

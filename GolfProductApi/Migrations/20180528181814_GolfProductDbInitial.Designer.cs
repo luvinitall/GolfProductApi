@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GolfProductApi.Migrations
 {
     [DbContext(typeof(GolfProductDbContext))]
-    [Migration("20180528181218_GolfProductDbAddSeedDataForRogueIron")]
-    partial class GolfProductDbAddSeedDataForRogueIron
+    [Migration("20180528181814_GolfProductDbInitial")]
+    partial class GolfProductDbInitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
