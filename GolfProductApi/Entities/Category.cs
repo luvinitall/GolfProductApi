@@ -17,5 +17,7 @@ namespace GolfProductApi.Entities
 
         public virtual ICollection<CatalogCategory> CatalogCategories { get; } = new List<CatalogCategory>();
 
+        public virtual ICollection<Family> Families { get; set; } = new List<Family>();
+
     }
 }

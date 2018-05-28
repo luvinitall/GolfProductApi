@@ -8,6 +8,7 @@ namespace GolfProductApi
     {
         public DbSet<Catalog> Catalogs { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Category> Families { get; set; }
 
         public GolfProductDbContext(DbContextOptions<GolfProductDbContext> options)
         {
@@ -22,10 +23,15 @@ namespace GolfProductApi
                 .HasIndex(c => c.Description).IsUnique(true).HasName("uidx_Catalog_Description");
             modelBuilder.Entity<Category>()
                 .HasIndex(c => c.Description).IsUnique(true).HasName("uidx_Category_Description");
+            modelBuilder.Entity<Family>()
+                .HasIndex(c => c.Description).IsUnique(true).HasName("uidx_Family_Description");
             modelBuilder.Entity<CatalogCategory>()
                 .HasKey(t => new { t.CatalogId, t.CategoryId });
 
-        }
+
+
+
+    }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
