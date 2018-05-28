@@ -19,6 +19,8 @@ namespace GolfProductApi
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseDefaultServiceProvider(options =>
+                    options.ValidateScopes = false)
                 .UseStartup<Startup>()
                 .Build();
     }
