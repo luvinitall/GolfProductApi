@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GolfProductApi", "GolfProductApi\GolfProductApi.csproj", "{367055E0-4DC4-46EF-BADB-7B37567131A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GolfProductModel", "GolfProductModel\GolfProductModel.csproj", "{CA6B514B-F570-40CA-891D-2416121870A9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{367055E0-4DC4-46EF-BADB-7B37567131A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{367055E0-4DC4-46EF-BADB-7B37567131A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{367055E0-4DC4-46EF-BADB-7B37567131A2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA6B514B-F570-40CA-891D-2416121870A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA6B514B-F570-40CA-891D-2416121870A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA6B514B-F570-40CA-891D-2416121870A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA6B514B-F570-40CA-891D-2416121870A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
