@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using GolfProductApi.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -173,7 +174,9 @@ namespace GolfProductApi
                 new Product() {ProductId = 24, FamilyId = familyRogueIron.FamilyId, Description = "Rogue 9 Iron", Sku = "Rogue9IronLW", Gender = Gender.Female, Hand = Hand.Left};
 
 
-            modelBuilder.Entity<Product>().HasData(productRogueIron3,
+            List<Product> products = new List<Product>()
+            {
+                productRogueIron3,
                 productRogueIron4,
                 productRogueIron5,
                 productRogueIron6,
@@ -196,7 +199,10 @@ namespace GolfProductApi
                 productRogueIronSetLH,
                 productRogueIron5LHF,
                 productRogueIron7LHF,
-                productRogueIron9LHF);
+                productRogueIron9LHF
+            };
+
+            modelBuilder.Entity<Product>().HasData(products.ToArray());
 
         }
 
