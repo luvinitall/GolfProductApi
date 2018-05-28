@@ -28,7 +28,7 @@ namespace GolfProductApi.Controllers
                 {
                     new Catalog()
                     {
-                        CatalogId = 1,
+                        Id = 1,
                         Description = "Hello"
                     }
                 };

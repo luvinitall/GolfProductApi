@@ -11,10 +11,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.OData" Version="7.0.0-beta2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.3" />
     <PackageReference Include="NLog.Extensions.Logging" Version="1.1.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GolfProductData\GolfProductData.csproj" />
     <ProjectReference Include="..\GolfProductModel\GolfProductModel.csproj" />
   </ItemGroup>
 

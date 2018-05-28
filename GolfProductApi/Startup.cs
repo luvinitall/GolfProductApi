@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GolfProductData;
 using GolfProductModel;
 using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNet.OData.Extensions;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -32,11 +34,12 @@ namespace GolfProductApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOData();
-            services.AddMvc().AddMvcOptions(o=>o.OutputFormatters.Add(
-                new XmlDataContractSerializerOutputFormatter()))
-                .AddMvcOptions(o=>o.InputFormatters.Add(
+            services.AddMvc().AddMvcOptions(o => o.OutputFormatters.Add(
+                    new XmlDataContractSerializerOutputFormatter()))
+                .AddMvcOptions(o => o.InputFormatters.Add(
                     new XmlDataContractSerializerInputFormatter()));
-       
+            services.AddDbContext<GolfProductDbContext>(o =>
+                o.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=GolfProductDb;Trusted_Connection=True"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,14 +62,12 @@ namespace GolfProductApi
                 routebuilder.MapODataServiceRoute("ODataRoute", "odata", GetEdmModel());
                 routebuilder.Select().Expand().Filter().OrderBy().MaxTop(10).Count();
             });
-            
+
             //app.UseODataBatching();
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.Run(async (context) => { await context.Response.WriteAsync("Hello World!"); });
         }
+
         private static IEdmModel GetEdmModel()
         {
             var builder = new ODataConventionModelBuilder();
@@ -76,6 +77,5 @@ namespace GolfProductApi
 
             return builder.GetEdmModel();
         }
-
     }
 }
