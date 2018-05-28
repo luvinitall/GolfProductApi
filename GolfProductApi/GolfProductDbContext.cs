@@ -1,8 +1,8 @@
 ﻿using System;
-using GolfProductModel;
+using GolfProductApi.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace GolfProductData
+namespace GolfProductApi
 {
     public class GolfProductDbContext:DbContext
     {

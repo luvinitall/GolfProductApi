@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using GolfProductModel;
+using GolfProductApi.Entities;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -28,7 +28,7 @@ namespace GolfProductApi.Controllers
                 {
                     new Catalog()
                     {
-                        Id = 1,
+                        CatalogId = 1,
                         Description = "Hello"
                     }
                 };

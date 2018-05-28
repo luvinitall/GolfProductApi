@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GolfProductData\GolfProductData.csproj" />
     <ProjectReference Include="..\GolfProductModel\GolfProductModel.csproj" />
   </ItemGroup>
 

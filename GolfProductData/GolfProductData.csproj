@@ -12,4 +12,8 @@
     <ProjectReference Include="..\GolfProductModel\GolfProductModel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

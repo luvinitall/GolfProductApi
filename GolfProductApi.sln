@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GolfProductApi", "GolfProdu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GolfProductModel", "GolfProductModel\GolfProductModel.csproj", "{CA6B514B-F570-40CA-891D-2416121870A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GolfProductData", "GolfProductData\GolfProductData.csproj", "{7447FE05-5C09-46F7-A69B-DBCA684FC286}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{CA6B514B-F570-40CA-891D-2416121870A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA6B514B-F570-40CA-891D-2416121870A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA6B514B-F570-40CA-891D-2416121870A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7447FE05-5C09-46F7-A69B-DBCA684FC286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7447FE05-5C09-46F7-A69B-DBCA684FC286}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7447FE05-5C09-46F7-A69B-DBCA684FC286}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7447FE05-5C09-46F7-A69B-DBCA684FC286}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
