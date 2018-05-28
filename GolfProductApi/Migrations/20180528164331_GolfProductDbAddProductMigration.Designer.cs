@@ -12,9 +12,10 @@ using System;
 namespace GolfProductApi.Migrations
 {
     [DbContext(typeof(GolfProductDbContext))]
-    partial class GolfProductDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180528164331_GolfProductDbAddProductMigration")]
+    partial class GolfProductDbAddProductMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -6,9 +6,11 @@ namespace GolfProductApi
 {
     public class GolfProductDbContext:DbContext
     {
-        public DbSet<Catalog> Catalogs { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Category> Families { get; set; }
+        public virtual DbSet<Catalog> Catalogs { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Category> Families { get; set; }
+
+        public virtual DbSet<Product> Products { get; set; }
 
         public GolfProductDbContext(DbContextOptions<GolfProductDbContext> options)
         {
@@ -25,10 +27,10 @@ namespace GolfProductApi
                 .HasIndex(c => c.Description).IsUnique(true).HasName("uidx_Category_Description");
             modelBuilder.Entity<Family>()
                 .HasIndex(c => c.Description).IsUnique(true).HasName("uidx_Family_Description");
+            modelBuilder.Entity<Product>()
+                .HasIndex(c => c.Description).IsUnique(true).HasName("uidx_Product_Sku");
             modelBuilder.Entity<CatalogCategory>()
                 .HasKey(t => new { t.CatalogId, t.CategoryId });
-
-
 
 
     }

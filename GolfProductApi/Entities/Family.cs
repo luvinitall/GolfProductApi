@@ -20,9 +20,8 @@ namespace GolfProductApi.Entities
         [ForeignKey("CategoryId")]
         public short CategoryId { get; set; }
 
-        //public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 
-        //public virtual ICollection<CustomOption> CustomOptions { get; set; }
 
         //Outside of a demo, I might just trim the values for the user, but I wanted to try out a 'complex' validation rule
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
