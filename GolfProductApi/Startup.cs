@@ -8,9 +8,11 @@ using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.OData.Edm;
+using NLog.Extensions.Logging;
 
 namespace GolfProductApi
 {
@@ -21,13 +23,18 @@ namespace GolfProductApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOData();
-            services.AddMvc();
+            services.AddMvc().AddMvcOptions(o=>o.OutputFormatters.Add(
+                new XmlDataContractSerializerOutputFormatter()))
+                .AddMvcOptions(o=>o.InputFormatters.Add(
+                    new XmlDataContractSerializerInputFormatter()));
        
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            //Adding NLog to the mix
+            loggerFactory.AddNLog();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -36,6 +43,8 @@ namespace GolfProductApi
             {
                 app.UseExceptionHandler();
             }
+
+            app.UseStatusCodePages(); //Show a status code in browser instaead of exception in debugger
             app.UseMvc(routebuilder =>
             {
                 routebuilder.MapODataServiceRoute("ODataRoute", "odata", GetEdmModel());
