@@ -13,10 +13,9 @@ namespace GolfProductApi.Entities
 
         [Required]
         [StringLength(250)]
-        //[Index("uidx_Catalog_Description", IsUnique = true)]
         public string Description { get; set; }
 
-        public virtual ICollection<CatalogCategory> CatalogCategories { get; set; }
+        public virtual ICollection<CatalogCategory> CatalogCategories { get; } = new List<CatalogCategory>();
 
 
     }
